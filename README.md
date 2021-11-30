@@ -1,4 +1,4 @@
-# Prueba Tecnica
+# Prueba Técnica
 
 ## Development server
 1. Run `npm install`.
