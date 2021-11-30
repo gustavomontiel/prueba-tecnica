@@ -1,0 +1,54 @@
+<div class="padding-5">
+    <h3>{{ form.controls['id'].value ? 'Editar' : 'Crear' }} Héroe</h3>
+
+    <form mat-dialog-content [formGroup]="form">
+
+        <mat-form-field appearance="outline" class="example-form-field">
+            <mat-label>Nombre</mat-label>
+            <input appToUpperCase matInput formControlName="nombre" autocomplete="off"/>
+            <mat-icon matSuffix>person_outline</mat-icon>
+            <mat-error>Name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="example-form-field">
+            <mat-label>Identidad</mat-label>
+            <input matInput formControlName="identidad" autocomplete="off" />
+            <mat-icon matSuffix>face</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="example-form-field">
+            <mat-label>Universo</mat-label>
+            <mat-select formControlName="universo">
+                <mat-option value="DC">DC</mat-option>
+                <mat-option value="Marvel">Marvel</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+        <ng-container formArrayName="poderes">
+            <mat-toolbar>
+                <span>Poderes</span>
+                <span class="spacer"></span>
+                <button mat-icon-button (click)="addPoder()" color="primary">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </mat-toolbar>
+
+            <ng-container *ngFor="let alias of poderes.controls; let i=index">
+                <mat-form-field appearance="outline" class="example-form-field">
+                    <mat-label>Poder</mat-label>
+                    <input matInput type="text" [formControlName]="i" autocomplete="off">
+                </mat-form-field>
+                <mat-icon class="" (click)="removePoder(i)" color="warn">
+                    delete_forever</mat-icon>
+            </ng-container>
+        </ng-container>
+
+    </form>
+
+    <div mat-dialog-actions>
+        <button mat-raised-button routerLink="/heroes">Cancelar</button>
+        <button mat-raised-button color="primary" [disabled]="form.invalid"
+            (click)="openSaveConfirmModal()">Guardar</button>
+    </div>
+</div>

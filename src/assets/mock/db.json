@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "nombre": "SUPERMAN",
+    "identidad": "Clark Kent",
+    "universo": "DC",
+    "poderes": ["super Fuerza", "Volar"]
+  },
+  {
+    "id": 2,
+    "nombre": "CAPITAN AMERICA",
+    "identidad": "Steve Rogers",
+    "universo": "Marvel",
+    "poderes": ["Super Soldado", "Resitencia"]
+  },
+  {
+    "id": 3,
+    "nombre": "SPIDERMAN",
+    "identidad": "Peter Parker",
+    "universo": "Marvel",
+    "poderes": ["Sentido aragnido", "Fuerza"]
+  },
+  {
+    "id": 4,
+    "nombre": "IRONMAN",
+    "identidad": "Tony Stark",
+    "universo": "Marvel",
+    "poderes": ["Traje tecnológico"]
+  },
+  {
+    "id": 5,
+    "nombre": "BATMAN",
+    "identidad": "Bruce Wayne",
+    "universo": "DC",
+    "poderes": ["Tecnología"]
+  },
+  {
+    "id": 6,
+    "nombre": "FLASH",
+    "identidad": "Barry Allen",
+    "universo": "DC",
+    "poderes": ["Super velocidad"]
+  },
+  {
+    "id": 7,
+    "nombre": "HULK",
+    "identidad": "Bruce Banner",
+    "universo": "Marvel",
+    "poderes": ["Super Fuerza"]
+  },
+  {
+    "id": 8,
+    "nombre": "MUJER MARAVILLA",
+    "identidad": "Diana",
+    "universo": "DC",
+    "poderes": ["Fuerza", "Lazo Mágico"]
+  },
+  {
+    "id": 9,
+    "nombre": "DOCTOR STRANGE",
+    "identidad": "Stephen",
+    "universo": "Marvel",
+    "poderes": ["Magia"]
+  },
+  {
+    "id": 10,
+    "nombre": "BLACK PHANTER",
+    "identidad": "Tchalla",
+    "universo": "Marvel",
+    "poderes": ["Traje", "fuerza"]
+  },
+  {
+    "id": 11,
+    "nombre": "ANTMAN",
+    "identidad": "Scott Lang",
+    "universo": "Marvel",
+    "poderes": ["Tamaño"]
+  }
+]

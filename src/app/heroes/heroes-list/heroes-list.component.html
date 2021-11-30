@@ -1,0 +1,53 @@
+<div class="padding-5">
+  <h3>Listado</h3>
+  <mat-form-field class="example-form-field">
+    <input matInput #searchText placeholder="Buscar" (keyup.enter)="getHeroes(searchText.value)">
+    <button *ngIf="searchText.value" matSuffix mat-icon-button aria-label="Clear"
+      (click)="searchText.value=''; getHeroes(searchText.value)">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-stroked-button color="primary" (click)="getHeroes(searchText.value)">Buscar</button>
+  <button mat-raised-button color="primary" routerLink="/heroes/create">Agregar Héroe</button>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> nombre </th>
+      <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="identidad">
+      <th mat-header-cell *matHeaderCellDef><span class="d-none d-sm-block">identidad</span> </th>
+      <td mat-cell *matCellDef="let element"><span class="d-none d-sm-block">{{element.identidad}}</span> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="universo">
+      <th mat-header-cell *matHeaderCellDef><span class="d-none d-sm-block">universo</span> </th>
+      <td mat-cell *matCellDef="let element"><span class="d-none d-sm-block">{{element.universo}}</span> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef="let element">
+        <div class="">
+          <button mat-icon-button color="primary" [routerLink]="['/heroes/update/', element.id]">
+            <mat-icon>mode_edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="openRemoveConfirmModal(element)">
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
