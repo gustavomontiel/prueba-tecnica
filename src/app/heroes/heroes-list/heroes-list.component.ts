@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
@@ -21,7 +21,8 @@ export class HeroesListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
   @ViewChild(MatSort) sort: MatSort | undefined;
 
-  @ViewChild('searchText', { static: true }) searchText: string = '';
+  @ViewChild('searchText', { static: true }) searchText!: ElementRef;
+  textoBuscado = '';
 
   constructor(
     public heroesService: HeroesService,
@@ -36,6 +37,7 @@ export class HeroesListComponent implements OnInit {
 
 
   getHeroes(filtro: string = '') {
+    this.textoBuscado = filtro;
     this.heroesService.getHeroes(filtro).subscribe(
       resp => {
         this.dataSource = new MatTableDataSource(resp);
@@ -65,9 +67,9 @@ export class HeroesListComponent implements OnInit {
           verticalPosition: 'top',
           duration: 3000
         })
-        console.log(this.searchText);
         
-        this.getHeroes();
+        
+        this.getHeroes(this.textoBuscado);
       }      
     )
   }

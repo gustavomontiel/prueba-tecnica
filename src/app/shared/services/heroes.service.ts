@@ -35,6 +35,7 @@ export class HeroesService {
   }
 
   postHeroe(heroe: Heroe) {
+    !this.heroes && (this.heroes = []);
     heroe.id = this.heroes.reduce(
       (max = 0, heroe) => (heroe.id! > max ? heroe.id : max),
       0
