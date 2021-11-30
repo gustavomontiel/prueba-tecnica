@@ -2,7 +2,7 @@
 ## Tools
 * Angular 12
 * Angular Material 12
-* typescript 4.3
+* Typescript 4.3
 
 ## Features
 * Candeactivate
