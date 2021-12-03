@@ -14,13 +14,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   constructor(private loadingService: LoadingService, private router: Router) {}
 
   ngOnInit(): void {
-    // this.loadingService.isLoading.subscribe((res: boolean) => {
-    //   // setTimeout por el problema en tiempo de desarrollo: https://blog.angular-university.io/angular-debugging/
-    //   setTimeout(() => {
-    //     this.showLoading = res;
-    //     this.router.navigate(['/heroes']);
-    //   });
-    // });
   }
 
   ngAfterViewInit(): void {

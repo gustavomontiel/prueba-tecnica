@@ -4,8 +4,7 @@ import { YesCancelDialogData } from '../../models/yesCancelDialogData.model';
 
 @Component({
   selector: 'app-yes-cancel-dialog',
-  templateUrl: './yes-cancel-dialog.component.html',
-  styleUrls: ['./yes-cancel-dialog.component.scss']
+  templateUrl: './yes-cancel-dialog.component.html'
 })
 export class YesCancelDialogComponent {
 
