@@ -1,4 +1,19 @@
-# PruebaTecnica
+# Prueba Técnica
+## Tools
+* Angular 12
+* Angular Material 12
+* Typescript 4.3
+
+## Features
+* Candeactivate
+* Reactiveforms
+* Validators
+* Interceptors
+* Custom directives
+* Lazy loading
+* Nested router outlets
+* Dockerfile
+* Tests
 
 ## Development server
 1. Run `npm install`.
